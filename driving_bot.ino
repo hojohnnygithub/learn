@@ -1,4 +1,4 @@
-//This sketch is for Lesson 5 "Motoring Around" and this will instruct your buggy to drive around.
+//This sketch is for Lesson 6 "Motoring Around" and this will instruct your buggy to drive around.
 
 
 // the code below connects the motor board pins to Arduino digital pins
