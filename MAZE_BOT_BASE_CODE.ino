@@ -11,11 +11,11 @@ const int sensorpinLeft = 4;
 
 //Arduino pins connected to motor driver shield
 //motor A
-const int motorpinLeft1 = 5;
-const int motorpinLeft2 = 6;
+const int motorpinLeft1 = 6;
+const int motorpinLeft2 = 5;
 //motor B
-const int motorpinRight1 = 7;
-const int motorpinRight2 = 8;
+const int motorpinRight1 = 11;
+const int motorpinRight2 = 10;
 
 
 // Setup code will only run once at the start of the program.
