@@ -5,8 +5,8 @@
 
 // motor A (wired into the "A" on the motor board)
 
-const int motorpinLeft1 = 5;
-const int motorpinLeft2 = 6;
+const int motorpinLeft1 = 6;
+const int motorpinLeft2 = 5;
 
 // motor B (wired into the "B" on the motor board)
 
