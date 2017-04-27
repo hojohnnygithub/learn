@@ -64,9 +64,8 @@ void motorsForward(int speed, int milliseconds) {
 // motors backward function, this accepts parameters passed to it - speed(values: 0-255) and time(values:milliseconds)
 void motorsBackward(int speed, int milliseconds) {
   
-  analogWrite(motorpinLeft2, speed);
-  analogWrite(motorpinRight2, speed); 
-  delay(milliseconds);
+  //finish this function enter your own code below
+  
   //call the stopMotors() function
   stopMotors();
 }
@@ -75,9 +74,7 @@ void motorsBackward(int speed, int milliseconds) {
 // this accepts parameters passed to it - speed(values: 0-255) and time(values:milliseconds)
 void pointTurnLeft(int speed, int milliseconds){
   
-    analogWrite(motorpinLeft2, speed);
-    analogWrite(motorpinRight1, speed);
-    delay(milliseconds);
+    //finish this function enter your own code below
     //call the stopMotors() function
     stopMotors();
 }
@@ -86,9 +83,8 @@ void pointTurnLeft(int speed, int milliseconds){
 // this accepts parameters passed to it - speed(values: 0-255) and time(values:milliseconds)
 void pointTurnRight(int speed, int milliseconds){
 
-    analogWrite(motorpinLeft1, speed);
-    analogWrite(motorpinRight2, speed);
-    delay(milliseconds);
+    //finish this function
+  
     //call the stopMotors() function
     stopMotors();
 }
@@ -96,11 +92,7 @@ void pointTurnRight(int speed, int milliseconds){
 
 // Loop code will run after the setup code and keep running over and over again forever until the power is shut off.
 void loop() {
-
-  // Go forward at speed 100 for 2000 milliseconds (2 seconds)
-  motorsForward(100, 2000);
-
-  
+ 
   // object on right of MazeBot
   // LOW means that something has been detected
   if (digitalRead(sensorpinLeft) == HIGH && digitalRead(sensorpinMid) == HIGH && digitalRead(sensorpinRight) == LOW){
@@ -127,17 +119,8 @@ void loop() {
       
   }
   
-  // object on left of MazeBot
-    else if (digitalRead(sensorpinLeft) == LOW  && digitalRead(sensorpinMid) == HIGH && digitalRead(sensorpinRight) == HIGH) {
-    //send message to serial monitor
-    Serial.println("Object detected on our left!");
-    // drive backward at speed 150 for 500 milliseconds (0.5 seconds)
-    motorsBackward(150, 500);
-    // turn right sharply
-    pointTurnRight(255, 500);
-  
+  // object on left of MazeBot enter your code below this line
     
-  }
   
   //no object in front  
   else {
