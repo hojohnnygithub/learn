@@ -47,7 +47,8 @@ void motorsForward(int speed, int milliseconds) {
   analogWrite(motorpinLeft1, speed);
   analogWrite(motorpinRight1, speed);
   delay(milliseconds);
-  //call the stopMotors() function
+ Serial.println("motors forward"); 
+ //call the stopMotors() function
   stopMotors();
 
 }
@@ -59,6 +60,7 @@ void pointTurnLeft(int speed, int milliseconds){
     analogWrite(motorpinLeft2, speed);
     analogWrite(motorpinRight1, speed);
     delay(milliseconds);
+    Serial.println("point turn left");
     //call the stopMotors() function
     stopMotors();
 }
@@ -67,7 +69,7 @@ void pointTurnLeft(int speed, int milliseconds){
 //this code will stop your program 
 void shutdown()
 {
-  
+ Serial.println("sketch finish"); 
  while(1);
 }
 
