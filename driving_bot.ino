@@ -88,7 +88,8 @@ void loop()
   motorsForward(100, 2000);
     
   //calls the "pointTurnLeft" function and passes the value "200" for speed and the value "700" for time 
-  pointTurnLeft(100, 700);
+ // remove the "//" to activate pointTurnLeft
+ //pointTurnLeft(100, 700);
   
   //Add your instructional code here: 
   
