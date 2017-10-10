@@ -32,10 +32,9 @@ void shutdown()
 void loop() {
   //Make the green Led blink 
   digitalWrite(11, HIGH);   // set the LED on
-  delay(500);              // wait for a 1 second
-  Serial.println("blink LED"); // send message to serial monitor
+  delay(500);              // wait for a 1/2 second
   digitalWrite(11, LOW);    // set the LED off
-  delay(500);              // wait for a 1 second
+  delay(500);              // wait for a 1/2 second
 
   //Write your code here to make the yellow led blink
   
