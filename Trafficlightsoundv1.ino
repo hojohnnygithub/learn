@@ -1,4 +1,4 @@
-// Traffic Light 
+// Traffic Light program
 
 // setup speaker to arduino pin 9
 
@@ -47,15 +47,13 @@ void loop() {
   
   
   
-  // Play a sound
+  // Play a sound 1500
   tone(buzzer, 1500);
-  //send message to the serial
-  Serial.println("play sound 1");
   // play sound for for 1/2 second
   delay(200);
   //stop sound
   noTone(buzzer);
-  //stop sound for 1 second
+  //stop sound for 1/2 second
   delay(200);
 
   //Write your code here to play a different sound 
@@ -67,4 +65,5 @@ void loop() {
   shutdown();
 
 }
+
 
