@@ -80,7 +80,7 @@ void pointTurnLeft(int speed, int milliseconds){
 
 //function to drive the motors in turn the buggy in a sharp right direction at a set speed and time
 //this function uses parameter passing where the values for speed - "speed" and time -"milliseconds" is passed to the function from the main code
-void pointTurnLeft(int speed, int milliseconds){
+void pointTurnRight(int speed, int milliseconds){
   
     analogWrite(motorpinLeft1, speed);
     analogWrite(motorpinRight2, speed);
