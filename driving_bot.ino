@@ -10,8 +10,8 @@ const int motorpinLeft2 = 6;
 
 // motor B (wired into the "B" on the motor board)
 
-const int motorpinRight1 = 10;
-const int motorpinRight2 = 11;
+const int motorpinRight1 = 11;
+const int motorpinRight2 = 10;
 
 
 void setup()
@@ -53,6 +53,19 @@ void motorsForward(int speed, int milliseconds) {
 
 }
 
+//function to drive the motors in forward direction at a set speed and time
+//this function uses parameter passing where the values for speed - "speed" and time -"milliseconds" is passed to the function from the main code
+void motorsBackward(int speed, int milliseconds) {
+  
+  analogWrite(motorpinLeft2, speed);
+  analogWrite(motorpinRight2, speed);
+  delay(milliseconds);
+ Serial.println("motors backward"); 
+ //call the stopMotors() function
+  stopMotors();
+
+}
+
 //function to drive the motors in turn the buggy in a sharp left direction at a set speed and time
 //this function uses parameter passing where the values for speed - "speed" and time -"milliseconds" is passed to the function from the main code
 void pointTurnLeft(int speed, int milliseconds){
@@ -61,6 +74,18 @@ void pointTurnLeft(int speed, int milliseconds){
     analogWrite(motorpinRight1, speed);
     delay(milliseconds);
     Serial.println("point turn left");
+    //call the stopMotors() function
+    stopMotors();
+}
+
+//function to drive the motors in turn the buggy in a sharp right direction at a set speed and time
+//this function uses parameter passing where the values for speed - "speed" and time -"milliseconds" is passed to the function from the main code
+void pointTurnLeft(int speed, int milliseconds){
+  
+    analogWrite(motorpinLeft1, speed);
+    analogWrite(motorpinRight2, speed);
+    delay(milliseconds);
+    Serial.println("point turn right");
     //call the stopMotors() function
     stopMotors();
 }
