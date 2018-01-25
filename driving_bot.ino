@@ -44,8 +44,8 @@ void stopMotors() {
 //this function uses parameter passing where the values for speed - "speed" and time -"milliseconds" is passed to the function from the main code
 void motorsForward(int speed, int milliseconds) {
   
-  analogWrite(motorpinLeft1, speed);
-  analogWrite(motorpinRight1, speed);
+  analogWrite(motorpinLeft1, speed*1.0);
+  analogWrite(motorpinRight1, speed*1.0);
   delay(milliseconds);
  Serial.println("motors forward"); 
  //call the stopMotors() function
@@ -57,8 +57,8 @@ void motorsForward(int speed, int milliseconds) {
 //this function uses parameter passing where the values for speed - "speed" and time -"milliseconds" is passed to the function from the main code
 void motorsBackward(int speed, int milliseconds) {
   
-  analogWrite(motorpinLeft2, speed);
-  analogWrite(motorpinRight2, speed);
+  analogWrite(motorpinLeft2, speed*1.0);
+  analogWrite(motorpinRight2, speed*1.0);
   delay(milliseconds);
  Serial.println("motors backward"); 
  //call the stopMotors() function
@@ -109,12 +109,12 @@ void loop()
 {
   //tells your buggy to wait 3 seconds before completing instructions after it
   delay(3000); 
-  //calls the "motorsForward" function and passes the value "200" for speed and the value "2000" for time 
-  motorsForward(100, 2000);
+  //calls the "motorsForward" function and passes the value "200" for speed and the value "1000" milliseconds for time 
+  motorsForward(100, 1000);
     
-  //calls the "pointTurnLeft" function and passes the value "200" for speed and the value "700" for time 
+  //calls the "pointTurnLeft" function and passes the value "200" for speed and the value "350" milliseconds for time 
  // remove the "//" to activate pointTurnLeft
- //pointTurnLeft(100, 700);
+ //pointTurnLeft(100, 350);
   
   //Add your instructional code here: 
   
