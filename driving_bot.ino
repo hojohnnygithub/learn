@@ -110,7 +110,7 @@ void loop()
   //tells your buggy to wait 3 seconds before completing instructions after it
   delay(3000); 
   //calls the "motorsForward" function and passes the value "200" for speed and the value "1000" milliseconds for time 
-  motorsForward(100, 1000);
+  motorsForward(130, 1000);
     
   //calls the "pointTurnLeft" function and passes the value "200" for speed and the value "350" milliseconds for time 
  // remove the "//" to activate pointTurnLeft
