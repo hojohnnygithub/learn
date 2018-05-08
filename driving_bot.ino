@@ -100,7 +100,7 @@ void shutdown()
  while(1);
 }
 
-
+//++++++++++++++++++++++++++++++++++++++++++++PRIMARY CODE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // the code below is your program, instructions here will be completed over and over again unless the "shutdown" function is called.
 void loop()
 {
@@ -111,7 +111,7 @@ void loop()
     
   //calls the "pointTurnLeft" function and passes the value "200" for speed and the value "350" milliseconds for time 
  pointTurnLeft(200, 350);
- //calls the "pointTurnRight" function and passes the value "200" for speed and the value "350" milliseconds for time 
+ //calls the "pointTurnRight" function and passes the value "700" for speed and the value "350" milliseconds for time 
  pointTurnRight(200, 700);
   
   //Add your instructional code here: 
@@ -124,3 +124,4 @@ void loop()
   shutdown(); 
   
 }
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
