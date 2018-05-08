@@ -55,19 +55,6 @@ void motorsForward(int speed, int milliseconds) {
 
 }
 
-//function to drive the motors in forward direction at a set speed and time
-//this function uses parameter passing where the values for speed - "speed" and time -"milliseconds" is passed to the function from the void loop
-void motorsBackward(int speed, int milliseconds) {
-  
-  analogWrite(motorpinLeft2, speed*1.0); // the "*1.0" can be changed to calibrate the motor
-  analogWrite(motorpinRight2, speed*1.0); // the "*1.0" can be changed to calibrate the motor
-  delay(milliseconds);
- Serial.println("motors backward"); 
- //call the stopMotors() function
-  stopMotors();
-
-}
-
 //function to drive the motors in turn the buggy in a sharp left direction at a set speed and time
 //this function uses parameter passing where the values for speed - "speed" and time -"milliseconds" is passed to the function from the void loop
 void pointTurnLeft(int speed, int milliseconds){
@@ -109,12 +96,7 @@ void loop()
   //calls the "motorsForward" function and passes the value "200" for speed and the value "1000" milliseconds for time 
   motorsForward(200, 1000);
     
-  //calls the "pointTurnLeft" function and passes the value "200" for speed and the value "350" milliseconds for time 
- pointTurnLeft(200, 350);
- //calls the "pointTurnRight" function and passes the value "700" for speed and the value "350" milliseconds for time 
- pointTurnRight(200, 700);
-  
-  //Add your instructional code here: 
+   //Add your own code here: 
   
 
 
@@ -124,4 +106,4 @@ void loop()
   shutdown(); 
   
 }
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++END OF PROGRAM++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
