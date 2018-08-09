@@ -1,6 +1,6 @@
 //This sketch is for Lesson 6 "Motoring Around" and this will instruct your buggy to drive around.
 
-// the code below connects the motor board pins to Arduino digital pins
+// the code below connects the motor board pins to Arduino Uno PWM digital pins
 
 // motor A (wired into the "A" on the motor board)
 
@@ -55,6 +55,18 @@ void motorsForward(int speed, int milliseconds) {
 
 }
 
+void motorsBackward(int speed, int milliseconds) {
+
+ 
+  analogWrite(motorpinLeft2, speed*1.0);   // the "*1.0" can be changed to calibrate the motor
+  analogWrite(motorpinRight2, speed*1.0); // the "*1.0" can be changed to calibrate the motor
+  delay(milliseconds);
+ Serial.println("motors Backward"); 
+ //call the stopMotors() function
+  stopMotors();
+
+}
+
 //function to drive the motors in turn the buggy in a sharp left direction at a set speed and time
 //this function uses parameter passing where the values for speed - "speed" and time -"milliseconds" is passed to the function from the void loop
 void pointTurnLeft(int speed, int milliseconds){
@@ -83,9 +95,12 @@ void pointTurnRight(int speed, int milliseconds){
 //this code will stop your program 
 void shutdown()
 {
- Serial.println("sketch finish"); 
+ Serial.println("program finished"); 
  while(1);
 }
+
+//Add any additional Function code here i.e. light sensor, colour sensor. 
+
 
 //++++++++++++++++++++++++++++++++++++++++++++PRIMARY CODE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // the code below is your program, instructions here will be completed over and over again unless the "shutdown" function is called.
