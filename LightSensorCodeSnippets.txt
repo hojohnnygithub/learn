@@ -1,0 +1,100 @@
+//This is a code snippet. STUDENTS MUST copy the code below into their "DrivingBot" program. 
+//Please ensure you read and copy the CORRECT code into the CORRECT place.
+ 
+
+//Arduino pins connected to Light sensors
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SENSOR CONNECTION CODE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//copy the four lines below into the top of your DrivingBot program above the motor connections
+//sensor pin connections
+const int sensorpinRight = 2;
+const int sensorpinMid = 3;
+const int sensorpinLeft = 4;
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SENSOR CONNECTION CONNECT+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//ADD in the connections for your motors
+
+// Setup code will only run once at the start of the program.
+void setup() {
+ //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SENSOR CODE SETUP++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  
+  //copy the four lines below into the "setup function of your DrivingBot program underneath the motorpin OUTPUTs.
+  // Set sensor pins as input so that we can read information from them.
+  pinMode(sensorpinLeft, INPUT);
+  pinMode(sensorpinMid, INPUT);
+  pinMode(sensorpinRight, INPUT);
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SENSOR CODE SETUP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   
+}
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++FUNCTION CODE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//copy the function below into your DrivingBot program below the line "//Add any additional Function code here i.e. LIGHT SENSOR, COLOUR SENSOR. 
+" PLEASE ensure you copy the entire function.
+
+void detectObstacle() {
+// this function determines whether there is an obstable in front OR on the left OR on the right OR NOT (4 conditions).
+// HIGH means that nothing has been detected and LOW means that something has been detected
+
+    //Condition 1 there is an object in front of MazeBot
+    if (digitalRead(sensorpinMid) == LOW)  {
+    //send message to serial monitor
+    Serial.println("Condition 1 - Object directly in front of us!");
+        
+    //ADD code to drive backward at speed 150 for 500 milliseconds (0.5 seconds)
+    motorsBackward(150,500);
+    //ADD code to turn left sharply
+    
+      
+  }
+    
+//Condition 2 there is an object on left of MazeBot
+  // LOW means that something has been detected
+  if (digitalRead(sensorpinLeft) == LOW) {
+    //send message to serial monitor
+    Serial.println("Condition 2 - Object detected on our left!");
+    // ADD code to drive backward at speed 150 for 500 milliseconds (0.5 seconds)
+    
+    
+    // ADD code to turn the robot right sharply
+    
+  }
+  
+  // condition 3 there is an object on right of MazeBot
+  // LOW means that something has been detected
+  if (digitalRead(sensorpinRight) == LOW) {
+    //send message to serial monitor
+    Serial.println("Condition 3 - Object detected on our right!");
+    // ADD code to drive backward at speed 150 for 500 milliseconds (0.5 seconds)
+    
+    // ADD code to turn left sharply
+    
+
+
+  }
+
+  //Condition 4 there is no object in front  
+  // HIGH means that nothing has been detected and LOW means that something has been detected
+  if ((digitalRead(sensorpinLeft) == HIGH) && (digitalRead(sensorpinMid) == HIGH) && (digitalRead(sensorpinRight) == HIGH)) {
+    //send message to serial monitor
+    Serial.println("Condition 4 No objects detected");
+    //ADD code to drive the motors forward at speed 100 for 1000 milliseconds
+  
+  }
+}
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++FUNCTION CODE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+  
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SENSOR CODE VOID LOOP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Delete all code inside the DrivingBot void loop() function and call copy the line below and paste it there instead.
+detectObstable(); 
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SENSOR CODE VOID LOOP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  
+
+  
+  
+  
+    
+  
+  
+
