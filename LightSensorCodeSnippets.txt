@@ -27,7 +27,7 @@ void setup() {
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++FUNCTION CODE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //copy the function below into your DrivingBot program below the line "//Add any additional Function code here i.e. LIGHT SENSOR, COLOUR SENSOR. 
-" PLEASE ensure you copy the entire function.
+//PLEASE ensure you copy the entire function.
 
 void detectObstacle() {
 // this function determines whether there is an obstable in front OR on the left OR on the right OR NOT (4 conditions).
@@ -87,7 +87,7 @@ void detectObstacle() {
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SENSOR CODE VOID LOOP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 //Delete all code inside the DrivingBot void loop() function and call copy the line below and paste it there instead.
-detectObstable(); 
+detectObstacle(); 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SENSOR CODE VOID LOOP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   
 
