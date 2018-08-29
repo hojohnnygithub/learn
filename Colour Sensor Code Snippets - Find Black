@@ -1,0 +1,88 @@
+//This is a code snippet and not an entire sketch. 
+//these snippets are add ons for the Year 8 MAZEBot project. STUDENTS MUST copy the code below into their "MAZEBot" programs. 
+
+//copy the four lines below into the top of your MAZEBot program above the motor connections
+//Color Sensor pin connections
+#define S0 12
+#define S1 13
+#define S2 7
+#define S3 8
+#define sensorOut 9
+
+int frequency = 0;
+//int color=0;
+
+//place the following eight(8) lines into the void setup function
+
+//setup color sensor
+  pinMode(S0, OUTPUT);
+  pinMode(S1, OUTPUT);
+  pinMode(S2, OUTPUT);
+  pinMode(S3, OUTPUT);
+  pinMode(sensorOut, INPUT);
+  digitalWrite(S0, HIGH);
+  digitalWrite(S1, LOW);
+
+
+/* copy the function below into your DrivingBot program below the line "//Add any additional Function code here i.e. LIGHT SENSOR, COLOUR SENSOR".  PLEASE ensure you copy the entire function. */
+
+void findBlack() {
+ 
+    // Setting Red filtered photodiodes to be read
+ digitalWrite(S2, LOW);
+  digitalWrite(S3, LOW);
+  // Reading the output frequency for Red (R)
+  frequency = pulseIn(sensorOut, LOW);
+  int R = frequency;
+  // Printing the value on the serial monitor
+  Serial.print("R= ");//printing name
+  Serial.print(frequency);//printing RED color frequency
+  Serial.print("  ");
+  delay(100);
+  // Setting Green filtered photodiodes to be read
+  digitalWrite(S2, HIGH);
+  digitalWrite(S3, HIGH);
+  
+  // Reading the output frequency for Green (G)
+  frequency = pulseIn(sensorOut, LOW);
+    int G = frequency;
+  // Printing the value on the serial monitor
+  Serial.print("G= ");//printing name
+  Serial.print(frequency);//printing Green color frequency
+  Serial.print("  ");
+  delay(100);
+  // Setting Blue filtered photodiodes to be read
+  digitalWrite(S2, LOW);
+  digitalWrite(S3, HIGH);
+  
+  // Reading the output frequency for Blue(B)
+  frequency = pulseIn(sensorOut, LOW);
+  int B = frequency;
+  // Printing the value on the serial monitor
+  Serial.print("B= ");//printing name
+  Serial.print(frequency);//printing Blue color frequency
+  Serial.println("  ");
+  delay(100);
+
+
+//If statement that is looking for the condition of "colour black"
+ if ((R>250 & R<320) && (G>250 & G<320) && (B>210 & B<270)) {
+    
+ Serial.println("Found Black");
+ stopMotors(); 
+ Serial.println("Stopping now");
+ delay(100);
+ 
+//add code for signal here (only for Year 8) 
+
+
+ shutdown();       
+  
+}
+}
+
+
+//call function where required 
+findBlack();
+
+
