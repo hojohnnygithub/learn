@@ -1,8 +1,8 @@
-/*This sketch is for Lesson 6 "Motoring Around" and this will instruct your buggy to drive around.
+/*This sketch is for the Activity "Motoring Around" and this will instruct your MAZEBot to drive around.
 Author - Mr.Johnny Ho
-Last update - 24 Oct
-Updated to include extra details for the MAZEBot Activity(Please ignore unless working on MAZEBot lesson)
+Last update - 27 Oct 2020
 */
+
 // the code below connects the motor board pins to Arduino digital pins
 // motor A (wired into the "A" on the motor board)
 
@@ -14,7 +14,6 @@ const int motorpinLeft2 = 6;
 const int motorpinRight1 = 11;
 const int motorpinRight2 = 10;
 
-//MAZEBot - include the light sensor pins underneath this line
 
 void setup()
 {
@@ -31,7 +30,7 @@ void setup()
   //send message to the serial monitor
   Serial.println("Setup complete");
 
-//MAZEBot - include the sensor inputs underneath this line but still inside the setup function
+
   
 }
 
@@ -56,6 +55,20 @@ void motorsForward(int speed, int milliseconds) {
   analogWrite(motorpinRight1, speed*1.0); // the "*1.0" can be changed to calibrate the motor
   delay(milliseconds);
  Serial.println("motors forward"); 
+ //call the stopMotors() function
+  stopMotors();
+
+}
+
+//function to drive the motors in forward direction at a set speed and time
+//this function uses parameter passing where the values for speed - "speed" and time -"milliseconds" is passed to the function from the code in the "void loop"
+void motorsBackward(int speed, int milliseconds) {
+
+ 
+  analogWrite(motorpinLeft2, speed*1.0);   // the "*1.0" can be changed to calibrate the motor
+  analogWrite(motorpinRight2, speed*1.0); // the "*1.0" can be changed to calibrate the motor
+  delay(milliseconds);
+ Serial.println("motors backward"); 
  //call the stopMotors() function
   stopMotors();
 
@@ -93,7 +106,6 @@ void shutdown()
  while(1);
 }
 
-//MAZEBot - Add your avoidObstacle() function below this line.
 
 //++++++++++++++++++++++++++++++++++++++++++++PRIMARY CODE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // the code below is your program, instructions here will be completed over and over again unless the "shutdown" function is called.
@@ -110,6 +122,8 @@ void loop()
 
 
   
+ 
+ 
   // calls the shutdown function to ensure the program only runs through once.
   shutdown(); 
   
