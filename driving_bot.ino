@@ -11,8 +11,8 @@ const int motorpinLeft2 = 6;
 
 // motor B (wired into the "B" on the motor board)
 
-const int motorpinRight1 = 11;
-const int motorpinRight2 = 10;
+const int motorpinRight1 = 10;
+const int motorpinRight2 = 11;
 
 
 void setup()
