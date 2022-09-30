@@ -1,6 +1,6 @@
 /*This sketch is for the Activity "Motoring Around" and this will instruct your MAZEBot to drive around.
 Author - Mr.Johnny Ho
-Last update - 27 Oct 2020
+Last update - 30 Sept 2022
 */
 
 // the code below connects the motor board pins to Arduino digital pins
@@ -111,7 +111,7 @@ void shutdown()
 // the code below is your program, instructions here will be completed over and over again unless the "shutdown" function is called.
 void loop()
 {
-  //tells your buggy to wait 3 seconds before completing instructions after it
+  //tells your mazeBOT to wait 3 seconds before completing instructions after it
   delay(3000); 
   //calls the "motorsForward" function and passes the value "200" for speed and the value "500" milliseconds for time 
   motorsForward(200, 500);
